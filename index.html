@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#87CEFA">
+    <title>مقياس الضغوط النفسية | كليات عنيزة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo-box">
+        <div class="logo">شعار الكلية</div>
+    </div>
+    <div class="header-text">
+        <h2>كليات عنيزة</h2>
+        <p>كلية الدراسات الإنسانية والإدارية</p>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- الصفحة الرئيسية -->
+
+    <section id="introPage" class="page active">
+
+        <div class="hero">
+            <div class="hero-icon">✦</div>
+            <span class="tag">مقياس توعوي أكاديمي</span>
+
+            <h1>مقياس الضغوط النفسية لدى طالبات كليات عنيزة</h1>
+
+            <p class="intro">
+                تُقدم كلية الدراسات الإنسانية والإدارية، ممثلة بقسم علم النفس،
+                وبالتعاون مع وحدة التوعية الفكرية، هذا المقياس الذي يهدف إلى
+                التعرف على مستوى الضغوط النفسية لدى الطالبات خلال الشهر الماضي.
+            </p>
+
+            <p class="welcome">
+                نأمل قراءة كل عبارة بعناية واختيار الإجابة التي تعبّر عن حالتك
+                بدقة وموضوعية 🤍
+            </p>
+        </div>
+
+        <div class="info-card">
+            <h3>إعداد الطالبات</h3>
+            <p>إيلان الغلث – أفراح المطيري – هاجر الضليفع – بشائر الغدير</p>
+        </div>
+
+        <div class="info-card">
+            <h3>تعليمات الإجابة</h3>
+            <ul>
+                <li>يتكون المقياس من 12 عبارة.</li>
+                <li>اختاري إجابة واحدة فقط لكل عبارة.</li>
+                <li>جميع العبارات إلزامية.</li>
+                <li>أجيبي بناءً على حالتك خلال الشهر الماضي.</li>
+                <li>لا توجد إجابة صحيحة أو خاطئة.</li>
+            </ul>
+        </div>
+
+        <div class="privacy-note">
+            🔒 لا يطلب المقياس اسمك أو رقم هويتك، ولا يحفظ إجاباتك أو يشاركها.
+        </div>
+
+        <button class="main-btn" onclick="startTest()">
+            ابدئي المقياس ←
+        </button>
+
+    </section>
+
+
+    <!-- صفحة الأسئلة -->
+
+    <section id="questionsPage" class="page">
+
+        <div class="section-heading">
+            <span class="tag">المرحلة الثانية</span>
+            <h1>عبارات المقياس</h1>
+            <p>اختاري الإجابة التي تعبّر عن حالتك خلال الشهر الماضي.</p>
+        </div>
+
+        <div class="progress-card">
+            <div class="progress-info">
+                <span>مدى إكمال المقياس</span>
+                <strong id="progressText">0 / 12</strong>
+            </div>
+
+            <div class="progress-track">
+                <div id="progressBar"></div>
+            </div>
+        </div>
+
+        <form id="stressForm">
+
+            <div id="questionsContainer"></div>
+
+            <p id="errorMessage" class="error-message">
+                يرجى الإجابة عن جميع العبارات قبل الإرسال.
+            </p>
+
+            <button type="submit" class="main-btn">
+                إرسال الإجابات وعرض النتيجة
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- صفحة النتيجة المستقلة -->
+
+    <section id="resultPage" class="page">
+
+        <div class="result-card">
+
+            <div class="success-icon">✓</div>
+
+            <span class="tag">النتيجة النهائية</span>
+
+            <h1>تم إكمال المقياس بنجاح</h1>
+
+            <p class="result-subtitle">
+                شكراً لمشاركتك، فيما يلي نتيجة إجاباتك.
+            </p>
+
+            <div class="score-box">
+                <span>درجتك الكلية</span>
+
+                <div class="score-number">
+                    <strong id="totalScore">0</strong>
+                    <span>/ 60</span>
+                </div>
+
+                <p>الدرجة من 12 إلى 60</p>
+            </div>
+
+            <div class="level-box">
+                <span>مستوى الضغوط النفسية</span>
+                <h2 id="resultLevel">منخفضة</h2>
+                <p id="resultDescription"></p>
+            </div>
+
+            <div class="indicator">
+                <div class="indicator-labels">
+                    <span>منخفضة</span>
+                    <span>متوسطة</span>
+                    <span>مرتفعة</span>
+                </div>
+
+                <div class="indicator-track">
+                    <div id="resultIndicator"></div>
+                </div>
+                <p id="indicatorScore"></p>
+            </div>
+
+            <div class="scientific-note">
+                <strong>تنويه علمي:</strong>
+                هذا المقياس نشاط توعوي وأداة أولية للتعرف على مستوى الضغوط
+                النفسية، وليس اختباراً تشخيصياً أو مقياساً نفسياً مقنناً،
+                ولا يغني عن التقييم النفسي المتخصص.
+            </div>
+
+            <button class="main-btn" onclick="restartTest()">
+                إعادة المقياس ↻
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>كليات عنيزة © 2026</p>
+    <p>قسم علم النفس | كلية الدراسات الإنسانية والإدارية</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
