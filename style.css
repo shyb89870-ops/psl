@@ -413,16 +413,19 @@ body {
 }
 
 .indicator-track {
-    height: 16px;
+    height: 18px;
     border-radius: 30px;
     background: linear-gradient(
         to left,
-        #5AADE0 0%,
-        #9BD7F8 50%,
-        #D8F0FF 100%
+        #22C55E 0%,
+        #22C55E 31.25%,
+        #FACC15 31.25%,
+        #FACC15 64.58%,
+        #EF4444 64.58%,
+        #EF4444 100%
     );
     position: relative;
-}
+    }
 
 #resultIndicator {
     position: absolute;
